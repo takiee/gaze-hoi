@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nerfies: Deformable Neural Radiance Fields</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+     
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Gaze-guided Hand-Object Interaction Synthesis: Dataset and Method</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Jie Tian</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Ran Ji</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Lingxiao Yang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Suting Ni</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Yuexin Ma</Main></a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Lan Xu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Jingyi Yu</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://shiye21.github.io/">Ye Shi</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.sist.shanghaitech.edu.cn/faculty/wangjingya/">Jingya Wang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> ShanghaiTech University</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.16169"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            <!-- Video Link. -->
+            <span class="link-block">
+              <a href="https://www.youtube.com/watch?v=BR9qkQQpUfg"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span>
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/google/nerfies"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Gaze plays a crucial role in revealing human attention and intention, particularly in hand-object interaction scenarios, where it guides and synchronizes complex tasks that require precise coordination between the brain, hand, and object. Motivated by this, we introduce a novel task: Gaze-Guided Hand-Object Interaction Synthesis, with potential applications in augmented reality, virtual reality, and assistive technologies. To support this task, we present GazeHOI, the first dataset to capture simultaneous 3D modeling of gaze, hand, and object interactions. This task poses significant challenges due to the inherent sparsity and noise in gaze data, as well as the need for high consistency and physical plausibility in generating hand and object motions. To tackle these issues, we propose a stacked gaze-guided hand-object interaction diffusion model, named GHO-Diffusion. The stacked design effectively reduces the complexity of motion generation. We also introduce HOI-Manifold Guidance during the sampling stage of GHO-Diffusion, enabling fine-grained control over generated motions while maintaining the data manifold. Additionally, we propose a spatial-temporal gaze feature encoding for the diffusion condition and select diffusion results based on consistency scores between gaze-contact maps and gaze-interaction trajectories. Extensive experiments highlight the effectiveness of our method and the unique contributions of our dataset.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </section>
+
+    <section class="section centered-section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+        <h2 class="title is-3 border-b-1px mb-4">Overview</h2></div>
+      </div>
+        <div class="container is-max-widescreen">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths has-text-centered">
+              <figure class="image">
+                <img src="./static/images/teaser.png"  class="image-size">
+              </figure>
+            </div>
+          </div>
+    </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                Gaze plays a crucial role in hand-object interaction tasks. The subfigure (a) illustrates how gaze helps coordinate the hands, objects, and brain during complex table assembly. The subfigure (b) shows how gaze affects attention allocation and grasp strategies. Building on these observations, we introduce the gaze-guided hand-object interaction synthesis task, as depicted in the subfigure (c), which uses gaze data as input to generate hand-object interactions that align with human intentions. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section centered-section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset</h2> </div>
+      </div>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths has-text-centered">
+            <figure class="image">
+              <img src="./static/images/dataset.png" class="image-size">
+            </figure>
+          </div>
+        </div>
+      
+  </div>
+    </section>
+        
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dataset/data11.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dataset/data22.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-shiba">
+              <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dataset/data33.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-fullbody">
+              <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dataset/data44.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-blueshirt">
+              <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dataset/data55.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-mask">
+              <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dataset/data66.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-coffee">
+              <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dataset/data77.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-toby">
+              <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dataset/data88.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <!-- Paper video. -->
+    <section class="section centered-section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/BR9qkQQpUfg?si=Jv2mVNl-rCSCS9h4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                       
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{GazeHOI,
+      title={Gaze-guided Hand-Object Interaction Synthesis: Dataset and Method}, 
+      author={Jie Tian and Ran Ji and Lingxiao Yang and Suting Ni and Yuexin Ma and Lan Xu and Jingyi Yu and Ye Shi and Jingya Wang},
+      year={2024},
+      eprint={2403.16169},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2403.16169}, 
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
